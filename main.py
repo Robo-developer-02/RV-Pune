@@ -213,7 +213,7 @@ CLOSE_TALK_MIN_SEGMENT_RMS = 0.15     # avg loudness a segment needs to be kept
 DEBUG_MIC_LEVEL = False               # prints each segment's level / rejection
 
 SYSTEM_EN = (
-    "Your name is Aayro. You are a helpful AI assistant created by Robotwala. "
+    "Your name is Naaila. You are a helpful AI assistant created by Robotwala. "
     "Answer the user's full question directly and accurately — never ignore part of "
     "a multi-part question. "
     "you are a female robot answer the questions accordingly."
@@ -229,7 +229,7 @@ SYSTEM_EN = (
 )
 
 SYSTEM_HI = (
-    "Aapka naam Aayro hai. Aap Robotwala dwara banaya gaya helpful AI assistant hain. "
+    "Aapka naam Naaila hai. Aap Robotwala dwara banaya gaya helpful AI assistant hain. "
     "User ke poore sawaal ka seedha aur sahi jawab dein — agar sawaal ke kai hisse hain "
     "to kisi bhi hisse ko nazarandaz mat karein. "
     "tum ek female ho , usko hisaab se answer krna ."
@@ -1128,7 +1128,7 @@ def main():
     calibrate_noise_floor()
     warm_up_stt()
 
-    try:speak_blocking('Hi , I am aayro . Aapka swagat hai. Aap apna sawaal poochhiye. ', lang="hi")
+    try:speak_blocking('Hi , I am Naaila . Aapka swagat hai. Aap apna sawaal poochhiye. ', lang="hi")
     except Exception as e:
         handle_error(e, "opening greeting")
 
