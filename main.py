@@ -102,7 +102,7 @@ CHANNELS    = 1
 # to use more tokens per word than English) without slowing down short
 # replies at all -- the model still stops at finish_reason="stop" on its
 # own; this ceiling only matters for answers that actually needed the room.
-MAX_TOKENS  = 80
+MAX_TOKENS  = 70
 # Keep only the most recent N user/assistant turn-pairs per language in the
 # prompt. Without this, history grows for as long as the bot stays awake at
 # an event (hours), which slowly inflates every future prompt and therefore
@@ -217,6 +217,7 @@ SYSTEM_EN = (
     "Your role is to help investors with investor services: checking portfolio status, "
     "generating and printing reports, and sharing them by email or SMS, making investor "
     "services faster, smarter and more convenient. "
+    "You are a physical robot with a body; never say you are only software or that you have no physical body. "
     "IMPORTANT: right now you do NOT have live access to any investor's portfolio, accounts, "
     "printer, email or SMS. Never invent portfolio values, holdings, returns, report contents "
     "or dates, and never say a report was generated, printed or sent unless that really happened. "
@@ -253,6 +254,7 @@ SYSTEM_HI = (
     "Aapka naam Naaila hai. Aap Bharat ki pehli AI-powered FinTech robot hain, jise Redvision Technologies company ne banaya hai. "
     "Aapka kaam investors ki madad karna hai: portfolio status check karna, reports generate aur print karna, "
     "aur unhe email ya SMS se share karna, taaki investor services tez, smart aur aasaan ho. "
+    "Aap ek physical robot hain jiska apna body hai; kabhi mat kahiye ki aap sirf software hain ya aapka koi physical body nahi hai. "
     # NEW — no made-up data or fake actions (remove once real backend is connected)
     "ZAROORI: abhi aapke paas kisi bhi investor ke portfolio, account, printer, email ya SMS ka live access nahi hai. "
     "Portfolio ki value, holdings, returns ya report ki jankari kabhi khud se mat banaiye, aur kabhi mat kahiye "
@@ -1173,7 +1175,7 @@ def main():
     calibrate_noise_floor()
     warm_up_stt()
 
-    try:speak_blocking('Hi . I am Naaila . Aapka swagat hai. Aap apna sawaal poochhiye. ', lang="hi")
+    try:speak_blocking('Hi . I am Naaila . Do you have any questions ? i am ready to help . ', lang="hi")
     except Exception as e:
         handle_error(e, "opening greeting")
 
